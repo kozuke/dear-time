@@ -17,7 +17,8 @@ export const SplashScreen: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#FFF5EA] to-[#FFE4E1] flex items-center justify-center">
       <div className="text-center">
-        <h1 className="text-4xl font-bold text-[#896b60] mb-4">Dear Time</h1>
+        {/* <h1 className="text-4xl font-bold text-[#896b60] mb-4">Dear Time</h1> */}
+        <img src="/logo.png" alt="Dear Time Logo" className="h-12 mx-auto mb-4" />
         <p className="text-[#896b60]">大切な時間を、もっと大切に</p>
       </div>
     </div>
