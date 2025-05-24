@@ -245,7 +245,7 @@ export const StitchDesign = (): JSX.Element => {
                   <ResponsiveContainer width="100%" height="100%">
                     <AreaChart
                       data={chartData}
-                      margin={{ top: 20, right: 30, left: 0, bottom: 0 }}
+                      margin={{ top: 20, right: 30, left: 50, bottom: 20 }}
                     >
                       <defs>
                         <linearGradient id="progressGradient" x1="0" y1="0" x2="0" y2="1">
@@ -262,7 +262,7 @@ export const StitchDesign = (): JSX.Element => {
                         dataKey="age"
                         stroke={colors.primary}
                         tick={{ fill: colors.primary }}
-                        label={{ value: '年齢', position: 'bottom', fill: colors.primary }}
+                        label={{ value: '年齢', position: 'bottom', fill: colors.primary, offset: 10 }}
                         ticks={chartData.reduce((acc: number[], point, index, array) => {
                           if (index === 0 || index === array.length - 1) {
                             acc.push(point.age);
@@ -299,8 +299,15 @@ export const StitchDesign = (): JSX.Element => {
                       <YAxis
                         stroke={colors.primary}
                         tick={{ fill: colors.primary }}
-                        label={{ value: '残り時間 (%)', angle: -90, position: 'left', fill: colors.primary }}
+                        label={{
+                          value: '残り時間 (%)',
+                          angle: -90,
+                          position: 'insideLeft',
+                          fill: colors.primary,
+                          offset: -35
+                        }}
                         domain={[0, 100]}
+                        tickCount={6}
                       />
                       <Tooltip content={<CustomTooltip />} />
                       <Area
